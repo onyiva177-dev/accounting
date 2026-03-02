@@ -328,7 +328,7 @@ export default function JournalPage() {
         .order('date', { ascending: false })
         .order('created_at', { ascending: false })
         .range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1),
-      supabase.from('accounts').select('id, name, code, type').order('code')
+      supabase.from('accounts').select('id, name, code, type').order('type').order('code')
     ])
 
     setEntries(entriesData || [])
